@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSliderModule } from '@angular/material/slider';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-user-form',
@@ -11,6 +12,7 @@ export class UserFormComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }

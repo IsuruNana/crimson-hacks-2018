@@ -22,6 +22,8 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { AnnualTaxChartComponent } from './components/annual-tax-chart/annual-tax-chart.component';
 
 import { MatSliderModule } from '@angular/material/slider';
+import { MatButtonModule } from '@angular/material/button';
+
 import { AnnualTaxChartDynamicComponent } from './components/annual-tax-chart-dynamic/annual-tax-chart-dynamic.component';
 
 @NgModule({
@@ -39,7 +41,8 @@ import { AnnualTaxChartDynamicComponent } from './components/annual-tax-chart-dy
     AngularFireAuthModule,
     AppRoutingModule,
     ChartsModule,
-    MatSliderModule
+    MatSliderModule,
+    MatButtonModule
   ],
   providers: [
     AngularFireDatabaseModule,
