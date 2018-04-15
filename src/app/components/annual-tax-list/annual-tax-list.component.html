@@ -2,18 +2,30 @@
     <table class="table">
         <thead class="thead-dark">
             <tr>
-                <th scope="col">#</th>
+                <th scope="col">Year</th>
                 <th scope="col">Education</th>
                 <th scope="col">Health Care</th>
                 <th scope="col">Defense</th>
+                <th scope="col">Pensions</th>
+                <th scope="col">Protection</th>
+                <th scope="col">Transportation</th>
+                <th scope="col">Welfare</th>
+                <th scope="col">General</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let tax of pastTaxes; let i = index">
-                <th scope="row">{{i}}</th>
-                <td>{{tax.education}}</td>
-                <td>{{tax.health_care}}</td>
-                <td>{{tax.defense}}</td>
+            <tr *ngFor="let tax of pastTaxes | slice:1; let i = index">
+
+                <!--<th scope="row">{{i}}</th>-->
+                <td>{{tax.year}}</td>
+                <td align="right">{{tax.education}}</td>
+                <td align="right">{{tax.health_care}}</td>
+                <td align="right">{{tax.defense}}</td>
+                <td align="right">{{tax.pensions}}</td>
+                <td align="right">{{tax.protection}}</td>
+                <td align="right">{{tax.transportation}}</td>
+                <td align="right">{{tax.welfare}}</td>
+                <td align="right">{{tax.general}}</td>
             </tr>
         </tbody>
     </table>
