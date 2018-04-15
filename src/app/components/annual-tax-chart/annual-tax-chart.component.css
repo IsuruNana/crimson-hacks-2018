@@ -1,0 +1,21 @@
+ button {
+   display: inline-block;
+   width: auto;
+   padding-left: 20px;
+   padding-right: 20px;
+   cursor: pointer;
+ }
+
+.centered {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h4 {
+  margin-top: 50px;
+}
+
+canvas {
+  margin-top: 50px;
+}

@@ -1,43 +1,16 @@
 
 <div class="row">
-    <div class="col-10">
-      <div style="display: block;">
-        <canvas baseChart width="200" height="200"
-                    [datasets]="lineChartData"
-                    [labels]="lineChartLabels"
-                    [options]="lineChartOptions"
-                    [colors]="lineChartColors"
-                    [legend]="lineChartLegend"
-                    [chartType]="lineChartType"
-                    (chartHover)="chartHovered($event)"
-                    (chartClick)="chartClicked($event)"></canvas>
-      </div>
-    </div>
-    <!--
-    <div class="col-2 mt-5">
-      <div class="container center">
-        <form>
-          <div class="row" *ngFor="let gov of lineChartData; let i = index">
-            <div class="form-check mb-2">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                <label class="form-check-label h4" for="inlineCheckbox1">{{gov.label}}</label>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>-->
-
-    <div class="col-2 mt-5">
-        <div class="container center">
-          <div class="row card bg-dark text-white mb-5" style="width: 18rem; width: 18rem;" *ngFor="let gov of lineChartData; let i = index">
-              <img class="card-img" src="..." alt="Card image">
-              <div class="card-img-overlay">
-                <h5 class="card-title">{{gov.label}}</h5>
-                <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-              </div>
-          </div>
+  <div class="col-10">
+    <div style="display: block;">
+      <canvas baseChart width="200" height="200"
+                  [datasets]="lineChartData"
+                  [labels]="lineChartLabels"
+                  [options]="lineChartOptions"
+                  [colors]="lineChartColors"
+                  [legend]="lineChartLegend"
+                  [chartType]="lineChartType"
+                  (chartHover)="chartHovered($event)"
+                  (chartClick)="chartClicked($event)"></canvas>
     </div>
   </div>
 </div>
