@@ -13,11 +13,13 @@ import { AnnualTaxListComponent } from './components/annual-tax-list/annual-tax-
 
 //Services
 import { PastTaxesService } from './services/past-taxes.service';
+import { UserFormComponent } from './components/user-form/user-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AnnualTaxListComponent,
+    UserFormComponent,
   ],
   imports: [
     BrowserModule,
