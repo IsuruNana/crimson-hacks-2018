@@ -19,6 +19,8 @@ import { AppRoutingModule } from './/app-routing.module';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { AnnualTaxChartComponent } from './components/annual-tax-chart/annual-tax-chart.component';
 
+import { MatSliderModule } from '@angular/material/slider';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +34,8 @@ import { AnnualTaxChartComponent } from './components/annual-tax-chart/annual-ta
     AngularFireModule.initializeApp(environment.firebase, 'tax-trackr'),
     AngularFireAuthModule,
     AppRoutingModule,
-    ChartsModule
+    ChartsModule,
+    MatSliderModule
   ],
   providers: [
     AngularFireDatabaseModule,
