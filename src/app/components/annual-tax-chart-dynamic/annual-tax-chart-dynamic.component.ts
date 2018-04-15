@@ -15,13 +15,16 @@ export class AnnualTaxChartDynamicComponent implements OnInit {
 
   // lineChart
   public lineChartData:Array<any> = [
-    {data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A'},
-    {data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'},
-    {data: [18, 48, 77, 9, 100, 27, 40], label: 'Series C'}
+    {data: [], label: 'defense'},
+    {data: [], label: 'education'},
+    {data: [], label: 'general'},
+    {data: [], label: 'health_care'},
+    {data: [], label: 'pensions'},
+    {data: [], label: 'protection'},
+    {data: [], label: 'transportation'},
+    {data: [], label: 'welfare'},
   ];
-  public lineChartLabels:Array<any> = [
-    '2000',
-  ];
+  public lineChartLabels:Array<any> = [];
   public lineChartOptions:any = {
     responsive: true
   };
@@ -31,10 +34,12 @@ export class AnnualTaxChartDynamicComponent implements OnInit {
 
   constructor(
     private pastTaxService: PastTaxesService,
-  ) { }
+  ) { 
+
+  }
 
   ngOnInit() {
-    this.pastTaxService.getClients().subscribe(taxes => {
+     this.pastTaxService.getClients().subscribe(taxes => {
       //Used to get key count
       const filtered = Object.keys(taxes);
       const finalTaxes = [];
@@ -60,9 +65,15 @@ export class AnnualTaxChartDynamicComponent implements OnInit {
         //Filter into array of arrays
         const importantStuff = Object.keys(taxes[i])
           .filter(key => allowed.includes(key))
-          .map((obj, key) => {
+          .forEach((obj, key) => {
             //console.log(taxes[i]);
-            return [obj, parseInt(taxes[i][obj])];
+            //console.log(obj);
+            //console.log(taxes[i][obj]);
+            let entry = {
+              label: obj,
+              value: taxes[i][obj]
+            }
+            this.setLineChartData(entry);
         });
 
         singleTaxObj.push(importantStuff);
@@ -74,6 +85,10 @@ export class AnnualTaxChartDynamicComponent implements OnInit {
           key: taxes[i].key,
           year: taxes[i].year,
           all_taxes_2: singleTaxObj
+        }
+
+        let entry = {
+          label: taxes[i]
         }
 
         finalTaxes.push(taxInfo);
@@ -89,6 +104,17 @@ export class AnnualTaxChartDynamicComponent implements OnInit {
 
   publicSetLables(labels) {
     this.lineChartLabels = labels;
+  }
+
+  setLineChartData(entry) {
+    console.log(entry);
+    //this.lineChartData.push(entry);
+    let i = 0;
+    for(i; i < this.lineChartData.length; i++) {
+      if(this.lineChartData[i].label == entry.label) {
+        this.lineChartData[i].data.push(entry.value);
+      }
+    }
   }
 
   
