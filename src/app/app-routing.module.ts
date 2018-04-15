@@ -5,7 +5,7 @@ import { UserFormComponent } from './components/user-form/user-form.component';
 import { AnnualTaxChartComponent} from './components/annual-tax-chart/annual-tax-chart.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/annual-tax-list', pathMatch: 'full' },
+  { path: '', redirectTo: '/annual-tax-chart', pathMatch: 'full' },
   { path: 'annual-tax-list', component: AnnualTaxListComponent },
   { path: 'annual-tax-chart', component: AnnualTaxChartComponent },
   { path: 'user-form', component: UserFormComponent }
