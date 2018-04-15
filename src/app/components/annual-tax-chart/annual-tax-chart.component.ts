@@ -30,6 +30,10 @@ export class AnnualTaxChartComponent implements OnInit {
     'welfare'
   ];
   public pieChartData:number[] = new Array<number>(8);
+
+  // public pieChartLabels:string[] = ['Download Sales', 'In-Store Sales', 'Mail Sales'];
+  // public pieChartData:number[] = [300, 500, 100];
+
   public pieChartType:string = 'pie';
 
   constructor(
@@ -93,7 +97,7 @@ export class AnnualTaxChartComponent implements OnInit {
     this.pastTaxes = finalTaxes;
 
     this.updatePieChart();
-    console.log(this.pastTaxes);
+    //console.log(this.pastTaxes);
   }
 
   // events
@@ -120,12 +124,13 @@ export class AnnualTaxChartComponent implements OnInit {
       if(this.displayYear.toString() == this.pastTaxes[i].year) {
         for(j; j < 8; j++) {
           currArr = this.pastTaxes[i].all_taxes_2[0][j][1];
-          console.log(currArr);
+          //console.log(currArr);
           this.pieChartData[j] = parseInt(currArr);
         }
         break;
       }
     }
-    console.log(this.pieChartData);
+    //console.log(this.pieChartData);
+    //this.pieChartData = [700, 100, 5000];
   }
 }

@@ -1,0 +1,28 @@
+
+<div class="row">
+    <div class="col-8">
+      <div style="display: block;">
+        <canvas baseChart width="200" height="200"
+                    [datasets]="lineChartData"
+                    [labels]="lineChartLabels"
+                    [options]="lineChartOptions"
+                    [colors]="lineChartColors"
+                    [legend]="lineChartLegend"
+                    [chartType]="lineChartType"
+                    (chartHover)="chartHovered($event)"
+                    (chartClick)="chartClicked($event)"></canvas>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="container center">
+        <form>
+          <div class="row" *ngFor="let years of lineChartLabels; let i = index">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <label class="form-check-label" for="inlineCheckbox1">{{years}}</label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+</div>
