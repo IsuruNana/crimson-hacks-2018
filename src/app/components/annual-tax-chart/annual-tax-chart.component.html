@@ -1,3 +1,11 @@
-<p>
-  annual-tax-chart works!
-</p>
+<div class="container m-5">
+    <h4>Year : {{displayYear}}</h4>
+    <canvas baseChart
+            [data]="pieChartData"
+            [labels]="pieChartLabels"
+            [chartType]="pieChartType"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)"></canvas>
+
+  <button class="btn btn-primary btn-block mt-4" (click)="onYearButtonClicked($event)">Next Year</button>
+</div>
