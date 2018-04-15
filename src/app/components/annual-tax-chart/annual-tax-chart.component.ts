@@ -45,40 +45,37 @@ export class AnnualTaxChartComponent implements OnInit {
       
       for(let i = 0; i < filtered.length; i++) {
         let singleTaxObj = [];
+        let key;
+        let year;
 
-        // const importantStuff = Object.keys(taxes[i])
-        //   .filter(key => allowed.includes(key))
-        //   .reduce((obj, key) => {
-        //     obj[key] = taxes[i][key];
-        //     return obj;
-        //   }, {});
-          
-
+        //Filter into array of arrays
         const importantStuff = Object.keys(taxes[i])
           .filter(key => allowed.includes(key))
           .map((obj, key) => {
-            console.log(taxes[i]);
+            //console.log(taxes[i]);
             return [obj, taxes[i][obj]];
           });
 
         singleTaxObj.push(importantStuff);
-        this.singleTax.all_taxes_2 = singleTaxObj;
-        finalTaxes.push(this.singleTax)
+        
 
+        let taxInfo = {
+          key: taxes[i].key,
+          year: taxes[i].year,
+          all_taxes_2: singleTaxObj
+        }
+
+        finalTaxes.push(taxInfo)
       }
 
       this.setPastTaxes(finalTaxes);
       
-      //console.log(filtered);
-      console.log(finalTaxes);
-
-      //console.log(this.pastTaxes);
-      //this.calculatorService.getTotal(this.pastTaxes[1]);
     });
   }
 
   setPastTaxes(finalTaxes) {
     this.pastTaxes = finalTaxes;
+    console.log(this.pastTaxes);
   }
 
 }
