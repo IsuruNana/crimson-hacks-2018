@@ -22,9 +22,10 @@ export class AnnualTaxListComponent implements OnInit {
 
   ngOnInit() {
     this.pastTaxService.getClients().subscribe(taxes => {
-      console.log(taxes);
+      //console.log(taxes);
       this.pastTaxes = taxes;
     });
+    //
     //if (this.pastTaxes != NULL)
     //    console.log(this.pastTaxes[0].Education);
   }

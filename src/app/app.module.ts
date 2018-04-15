@@ -15,12 +15,14 @@ import { AnnualTaxListComponent } from './components/annual-tax-list/annual-tax-
 import { PastTaxesService } from './services/past-taxes.service';
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AnnualTaxListComponent,
     UserFormComponent,
+    NavBarComponent,
   ],
   imports: [
     BrowserModule,
