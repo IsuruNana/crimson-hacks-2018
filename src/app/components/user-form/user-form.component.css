@@ -16,3 +16,7 @@ p {
 mat-slider {
   width: 300px;
 }
+
+button {
+  margin-top: 40px;
+}
