@@ -14,6 +14,7 @@ import { AnnualTaxListComponent } from './components/annual-tax-list/annual-tax-
 //Services
 import { PastTaxesService } from './services/past-taxes.service';
 import { UserFormComponent } from './components/user-form/user-form.component';
+import { AppRoutingModule } from './/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { UserFormComponent } from './components/user-form/user-form.component';
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase, 'tax-trackr'),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AppRoutingModule
   ],
   providers: [
     AngularFireDatabaseModule,
