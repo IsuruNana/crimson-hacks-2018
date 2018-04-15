@@ -16,7 +16,9 @@ export class AnnualTaxListComponent implements OnInit {
 
   constructor(
     private pastTaxService: PastTaxesService
-  ) { }
+  ) { 
+    
+  }
 
   ngOnInit() {
     this.pastTaxService.getClients().subscribe(taxes => {

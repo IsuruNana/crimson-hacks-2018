@@ -1,5 +1,20 @@
-<ul>
-    <li *ngFor="let tax of pastTaxes; let i = index">
-        {{tax.Education}}
-    </li>
-</ul>
+<div class="container">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Education</th>
+                <th scope="col">Health-Care</th>
+                <th scope="col">Defense</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let tax of pastTaxes; let i = index">
+                <th scope="row">{{i}}</th>
+                <td>{{tax.Education}}</td>
+                <td>{{tax.Health_Care}}</td>
+                <td>{{tax.Defense}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
