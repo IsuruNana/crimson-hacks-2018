@@ -13,6 +13,7 @@ import { Taxes } from '../../models/taxes';
 export class AnnualTaxListComponent implements OnInit {
   //Declare data type
   pastTaxes:any[];
+  taxYear:Taxes;
 
   constructor(
     private pastTaxService: PastTaxesService

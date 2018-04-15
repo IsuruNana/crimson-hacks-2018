@@ -14,6 +14,8 @@ import { AnnualTaxListComponent } from './components/annual-tax-list/annual-tax-
 
 //Services
 import { PastTaxesService } from './services/past-taxes.service';
+import { CalculatorService } from './services/calculator.service';
+
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
@@ -37,7 +39,8 @@ import { AnnualTaxChartComponent } from './components/annual-tax-chart/annual-ta
   providers: [
     AngularFireDatabaseModule,
     AngularFireDatabase,
-    PastTaxesService
+    PastTaxesService,
+    CalculatorService
   ],
   bootstrap: [AppComponent]
 })
