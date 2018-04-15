@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireDatabase } from 'angularfire2/database'; 
+import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable'
 
 import { PastTaxesService } from '../../services/past-taxes.service';
@@ -16,8 +16,8 @@ export class AnnualTaxListComponent implements OnInit {
 
   constructor(
     private pastTaxService: PastTaxesService
-  ) { 
-    
+  ) {
+
   }
 
   ngOnInit() {
@@ -25,6 +25,10 @@ export class AnnualTaxListComponent implements OnInit {
       console.log(taxes);
       this.pastTaxes = taxes;
     });
+    //if (this.pastTaxes != NULL)
+    //    console.log(this.pastTaxes[0].Education);
   }
+
+
 
 }
