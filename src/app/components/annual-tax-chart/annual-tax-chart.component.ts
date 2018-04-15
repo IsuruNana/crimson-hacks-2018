@@ -39,7 +39,7 @@ export class AnnualTaxChartComponent implements OnInit {
   constructor(
     private pastTaxService: PastTaxesService,
     private calculatorService: CalculatorService
-  ) { 
+  ) {
     this.baseYear = 2000;
     this.currYear = 0;
     this.displayYear = this.baseYear + this.currYear;
@@ -62,7 +62,7 @@ export class AnnualTaxChartComponent implements OnInit {
         'transportation',
         'welfare'
       ];
-      
+
       for(let i = 0; i < filtered.length; i++) {
         let singleTaxObj = [];
         let key;
@@ -77,7 +77,7 @@ export class AnnualTaxChartComponent implements OnInit {
           });
 
         singleTaxObj.push(importantStuff);
-        
+
 
         let taxInfo = {
           key: taxes[i].key,
@@ -89,7 +89,7 @@ export class AnnualTaxChartComponent implements OnInit {
       }
 
       this.setPastTaxes(finalTaxes);
-      
+
     });
   }
 
@@ -116,6 +116,7 @@ export class AnnualTaxChartComponent implements OnInit {
   }
 
   public updatePieChart() {
+      //this.destroy();
     let i = 0;
     let j = 0;
     let currArr;

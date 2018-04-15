@@ -34,7 +34,7 @@ export class AnnualTaxChartDynamicComponent implements OnInit {
 
   constructor(
     private pastTaxService: PastTaxesService,
-  ) { 
+  ) {
 
   }
 
@@ -56,7 +56,7 @@ export class AnnualTaxChartDynamicComponent implements OnInit {
         'transportation',
         'welfare'
       ];
-      
+
       for(let i = 0; i < filtered.length; i++) {
         let singleTaxObj = [];
         let key;
@@ -79,7 +79,7 @@ export class AnnualTaxChartDynamicComponent implements OnInit {
         singleTaxObj.push(importantStuff);
         if(taxes[i].year.toString() != "year" && taxes[i].year < 2018)
           labels.push(taxes[i].year.toString());
-        
+
 
         let taxInfo = {
           key: taxes[i].key,
@@ -97,9 +97,9 @@ export class AnnualTaxChartDynamicComponent implements OnInit {
 
       console.log(labels);
       this.publicSetLables(labels);
-      
+
     });
-  
+
   }
 
   publicSetLables(labels) {
@@ -117,40 +117,85 @@ export class AnnualTaxChartDynamicComponent implements OnInit {
     }
   }
 
-  
+
   public lineChartColors:Array<any> = [
     { // grey
-      backgroundColor: 'rgba(148,159,177,0.2)',
-      borderColor: 'rgba(148,159,177,1)',
-      pointBackgroundColor: 'rgba(148,159,177,1)',
+      backgroundColor: 'rgba(255,0,0,0.3)',
+      borderColor: 'rgba(255,0,0,1)',
+      pointBackgroundColor: 'rgba(255,0,0,1)',
       pointBorderColor: '#fff',
       pointHoverBackgroundColor: '#fff',
       pointHoverBorderColor: 'rgba(148,159,177,0.8)'
     },
     { // dark grey
-      backgroundColor: 'rgba(77,83,96,0.2)',
-      borderColor: 'rgba(77,83,96,1)',
-      pointBackgroundColor: 'rgba(77,83,96,1)',
+      backgroundColor: 'rgba(0,255,0,0.3)',
+      borderColor: 'rgba(0,255,0,1)',
+      pointBackgroundColor: 'rgba(0,255,0,1)',
       pointBorderColor: '#fff',
       pointHoverBackgroundColor: '#fff',
       pointHoverBorderColor: 'rgba(77,83,96,1)'
     },
     { // grey
-      backgroundColor: 'rgba(148,159,177,0.2)',
-      borderColor: 'rgba(148,159,177,1)',
-      pointBackgroundColor: 'rgba(148,159,177,1)',
+      backgroundColor: 'rgba(0,0,255,0.3)',
+      borderColor: 'rgba(0,0,255,1)',
+      pointBackgroundColor: 'rgba(0,0,255,1)',
       pointBorderColor: '#fff',
       pointHoverBackgroundColor: '#fff',
       pointHoverBorderColor: 'rgba(148,159,177,0.8)'
-    }
+  },
+  {
+      backgroundColor: 'rgba(255,255,0,0.3)',
+      borderColor: 'rgba(255,255,0,1)',
+      pointBackgroundColor: 'rgba(255,255,0,1)',
+      pointBorderColor: '#3399ff',
+      pointHoverBackgroundColor: '#3399ff',
+      pointHoverBorderColor: 'rgba(148,159,177,0.8)'
+
+  },
+  {
+      backgroundColor: 'rgba(0,255,255,0.3)',
+      borderColor: 'rgba(0,255,255,1)',
+      pointBackgroundColor: 'rgba(0,255,255,1)',
+      pointBorderColor: '#3399ff',
+      pointHoverBackgroundColor: '#3399ff',
+      pointHoverBorderColor: 'rgba(148,159,177,0.8)'
+
+  },
+  {
+      backgroundColor: 'rgba(255,0,255,0.3)',
+      borderColor: 'rgba(255,0,255,1)',
+      pointBackgroundColor: 'rgba(255,0,255,1)',
+      pointBorderColor: '#3399ff',
+      pointHoverBackgroundColor: '#3399ff',
+      pointHoverBorderColor: 'rgba(148,159,177,0.8)'
+
+  },
+  {
+      backgroundColor: 'rgba(128,0,0,0.3)',
+      borderColor: 'rgba(128,0,0,1)',
+      pointBackgroundColor: 'rgba(128,0,0,1)',
+      pointBorderColor: '#3399ff',
+      pointHoverBackgroundColor: '#3399ff',
+      pointHoverBorderColor: 'rgba(148,159,177,0.8)'
+
+  },
+  {
+      backgroundColor: 'rgba(0,128,128,0.3)',
+      borderColor: 'rgba(0,128,128,1)',
+      pointBackgroundColor: 'rgba(0,128,128,1)',
+      pointBorderColor: '#3399ff',
+      pointHoverBackgroundColor: '#3399ff',
+      pointHoverBorderColor: 'rgba(148,159,177,0.8)'
+
+  }
   ];
-  
- 
+
+
   // events
   public chartClicked(e:any):void {
     console.log(e);
   }
- 
+
   public chartHovered(e:any):void {
     console.log(e);
   }
