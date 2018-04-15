@@ -14,6 +14,8 @@ export class PastTaxesService {
   taxesPast: Observable<any[]>;
   tax: Observable<any>;
 
+  // pastTaxesReturn:any[];
+
   constructor(
     private db: AngularFireDatabase
   ) { 
@@ -29,5 +31,17 @@ export class PastTaxesService {
   getClients() {
     return this.taxesPast;
   }
+
+  // getClientsFormatted() {
+  //   return this.taxesPast.subscribe(taxes => {
+  //     //this.pastTaxes = taxes;
+  //     this.pastTaxes= taxes.map(tax => {
+  //       console.log(tax);
+  //       return {
+          
+  //       };
+  //     });
+  //   });
+  // }
 
 }
